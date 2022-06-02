@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EscannerQR.Vistas.V_Archivos"
+             Title="Escanner Viñoplastic">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Frame BackgroundColor="#2196F3" >
+                <Image  Source="image.png" HeightRequest="50"/>
+            </Frame>
+
+            <Frame HeightRequest="100" Padding="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0" x:Name="BtnBorrarArchivos"  BackgroundColor="Transparent" Source="BTNELIMINARTODO.png" Clicked="BtnBorrarArchivos_Clicked"/>
+                </Grid>
+            </Frame>
+
+                <ListView x:Name="ListaArchivos"  ItemSelected="ListaArchivos_ItemSelected" >
+                <ListView.Header>
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <!--<ColumnDefinition Width="*"/>-->
+                        </Grid.ColumnDefinitions>
+                        <!--<Label Grid.Column="2" TextColor="Black" FontAttributes="Bold" Text="ID"/>-->
+                        <Label Grid.Column="0"  TextColor="Black" FontAttributes="Bold" Text="Archivo"/>
+                        <Label Grid.Column="1" TextColor="Black" FontAttributes="Bold" Text="Fecha"/>
+
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <!--<ColumnDefinition Width="*"/>-->
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--<Label Grid.Column="2" TextColor="Black" Text="{Binding Id}"/>-->
+                                    <Label Grid.Column="0" TextColor="Black" Text="{Binding Folio}"/>
+                                    <Label Grid.Column="1" TextColor="Black" Text="{Binding Fecha, StringFormat='{}{0:dd/MM/yyyy h:mm tt}'}"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
