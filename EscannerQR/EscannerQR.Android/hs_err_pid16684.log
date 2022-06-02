@@ -1,0 +1,119 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 348160 bytes for card table expansion
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3371), pid=16684, tid=0x0000000000005698
+#
+# JRE version:  (8.0) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.71-b00 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000299e800):  JavaThread "Unknown thread" [_thread_in_vm, id=22168, stack(0x0000000002860000,0x0000000002960000)]
+
+Stack: [0x0000000002860000,0x0000000002960000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x000000000299e800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=22168, stack(0x0000000002860000,0x0000000002960000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006c2600000, size: 4058 MB, Compressed Oops mode: Non-zero based:0x00000006c25ff000, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7a4f20000 - 0x00007ff7a4f55000 	C:\Program Files\Android\Jdk\microsoft_dist_openjdk_1.8.0.25\bin\java.exe
+0x00007ff900ed0000 - 0x00007ff9010c5000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff900ce0000 - 0x00007ff900d9d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff8fe710000 - 0x00007ff8fe9d9000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff8ff1a0000 - 0x00007ff8ff24c000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff8fff80000 - 0x00007ff90001e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff8fef60000 - 0x00007ff8feffb000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff8ff010000 - 0x00007ff8ff13a000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff900840000 - 0x00007ff9009e0000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff8fe660000 - 0x00007ff8fe682000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff900b90000 - 0x00007ff900bba000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff8fec20000 - 0x00007ff8fed2b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff8fed30000 - 0x00007ff8fedcd000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff8fea90000 - 0x00007ff8feb90000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff8e70a0000 - 0x00007ff8e733a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ff8fef30000 - 0x00007ff8fef60000 	C:\WINDOWS\System32\IMM32.DLL
+0x00000000590b0000 - 0x0000000059181000 	C:\Program Files\Android\Jdk\microsoft_dist_openjdk_1.8.0.25\jre\bin\msvcr100.dll
+0x0000000058860000 - 0x00000000590a5000 	C:\Program Files\Android\Jdk\microsoft_dist_openjdk_1.8.0.25\jre\bin\server\jvm.dll
+0x00007ff900e60000 - 0x00007ff900e68000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff8e3050000 - 0x00007ff8e3059000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff8e3cd0000 - 0x00007ff8e3cf7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff8fd3a0000 - 0x00007ff8fd3aa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff900bc0000 - 0x00007ff900c2b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff8ef3d0000 - 0x00007ff8ef3df000 	C:\Program Files\Android\Jdk\microsoft_dist_openjdk_1.8.0.25\jre\bin\verify.dll
+0x00007ff8c9600000 - 0x00007ff8c9629000 	C:\Program Files\Android\Jdk\microsoft_dist_openjdk_1.8.0.25\jre\bin\java.dll
+0x00007ff8cc710000 - 0x00007ff8cc726000 	C:\Program Files\Android\Jdk\microsoft_dist_openjdk_1.8.0.25\jre\bin\zip.dll
+
+VM Arguments:
+java_command: <unknown>
+java_class_path (initial): .
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files\Android\Jdk\microsoft_dist_openjdk_1.8.0.25\bin;C:\Program Files\PHP\v7.3;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Mana;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\dotnet\;C:\Program Files\Microsoft Network Monitor 3\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\RPS3\AppData\Local\Microsoft\WindowsApps;;C:\Users\RPS3\.dotnet\tools;C:\Users\RPS3\AppData\Local\Programs\Microsoft VS Code\bin
+USERNAME=RPS3
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.1151)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16620760k(6828004k free), swap 47699156k(5240k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.71-b00) for windows-amd64 JRE (1.8.0-25-microsoft-b00), built on Feb  7 2019 20:09:14 by "builder" with MS VC++ 10.0 (VS2010)
+
+time: Tue Aug 17 10:21:38 2021
+timezone: Hora de verano central (México)
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
