@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EscannerQR.MainPage"
+             Title="Escanner Viñoplastic">
+
+
+    <StackLayout BackgroundColor="White" >
+        <Frame BackgroundColor="#2196F3" >
+            <Image  Source="image.png"  HeightRequest="50"/>
+        </Frame>
+        <Frame x:Name="FrButtons" BackgroundColor="#2196F3"  CornerRadius="20" Padding="20" Margin="20" HorizontalOptions="CenterAndExpand">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ImageButton  Grid.Column="0" x:Name="BtnEscanearQR_P" HeightRequest="100" BackgroundColor="Transparent" Source="BTNGDESCAN.PNG"  Clicked="BtnEscanearQR_P_Clicked"/>
+                <!--Command="{Binding ScanCommand}"/>-->
+                <ImageButton  Grid.Column="1" x:Name="BtnVerArchivos1" HeightRequest="100" BackgroundColor="Transparent" Source="BTNGDEARCH.PNG" Clicked="BtnVerArchivos1_Clicked"/>
+            </Grid>
+        </Frame>
+
+
+        <Frame x:Name="NombreFolio" IsVisible="false" BackgroundColor="#2196F3"  CornerRadius="20" Padding="20" Margin="20" HorizontalOptions="CenterAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!--<RowDefinition Height="*"/>-->
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--<Label Grid.Row="0" Text="Nombre de archivo:" TextColor="White" />-->
+                <Entry Grid.Row="0" x:Name="TxtFolio" Text="{Binding Folio}" Placeholder="Nombre de archivo:" PlaceholderColor="White" TextColor="white" BackgroundColor="#2196F3" TextChanged="TxtFolio_TextChanged"/>
+                <Button Grid.Row="1" x:Name="BtnOK" Text="Escanear" BackgroundColor="White" TextColor="#2196F3" Clicked="BtnOK_Clicked" Command="{Binding ScanCommand}"/>
+            </Grid>
+        </Frame>
+
+
+
+        <StackLayout IsVisible="false" x:Name="CtnLista" >
+
+            <Frame x:Name="FrButtons_1"  Padding="5" HeightRequest="120">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0" x:Name="BtnEscanearQR" BackgroundColor="Transparent" Source="BTNSCAN.PNG" Clicked="BtnEscanearQR_Clicked"/>
+                    <ImageButton Grid.Column="1" x:Name="BtnVerArchivos" BackgroundColor="Transparent" Source="BTNARCH.PNG" Clicked="BtnVerArchivos_Clicked" Command="{Binding VerArchivos}"/>
+                    <ImageButton Grid.Column="2" x:Name="BtnGuardarExcel" BackgroundColor="Transparent" Source="BTNCSV.PNG" Command="{Binding ExportToExcelCommand}"/>
+                </Grid>
+            </Frame>
+            
+            
+
+            <Label Text="{Binding Folio}" x:Name="FolioE" TextColor="Black"/>
+
+            <ListView x:Name="ListaCodigos" ItemsSource="{Binding Items}">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" FontAttributes="Bold" TextColor="Black" Text="Articulo"/>
+                        <Label Grid.Column="1" FontAttributes="Bold" TextColor="Black" Text="Stantardpack"/>
+                        <Label Grid.Column="2" FontAttributes="Bold" TextColor="Black" Text="Registros"/>
+                        <Label Grid.Column="3" FontAttributes="Bold" TextColor="Black" Text="total"/>
+                        <!--<Label Grid.Column="4" FontAttributes="Bold" TextColor="Black" Text="ID"/>-->
+
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" TextColor="Black" Text="{Binding Numparte}"/>
+                                    <Label Grid.Column="1" TextColor="Black" Text="{Binding Cantidad}"/>
+                                    <Label Grid.Column="2" TextColor="Black" Text="{Binding CantidadReg}"/>
+                                    <Label Grid.Column="3" TextColor="Black" Text="{Binding CantidadTot}"/>
+                                    <!--<Label Grid.Column="4" TextColor="Black" Text="{Binding Folio_Vin}"/>-->
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
